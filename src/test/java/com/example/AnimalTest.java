@@ -25,16 +25,11 @@ public class AnimalTest {
     }
 
     @Test
-    public void shouldUnknownAnimalHasExceptionAboutFood(){
+    public void shouldUnknownAnimalHasExceptionAboutFood() throws Exception {
         String expectedErrorMessage = "Неизвестный вид животного, используйте значение Травоядное или Хищник";
         String actualErrorMessage = null;
-        try {
-            new Animal().getFood("Киборг");
-        } catch (Exception exception) {
-            actualErrorMessage = exception.getMessage();
-        }
+        new Animal().getFood("Киборг");
         Assert.assertEquals(expectedErrorMessage,actualErrorMessage);
-
     }
 
     @Test
